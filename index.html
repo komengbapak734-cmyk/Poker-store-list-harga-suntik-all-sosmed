@@ -20,7 +20,6 @@
             overflow-x: hidden;
         }
 
-        /* Animated Background Overlay */
         body::before {
             content: '';
             position: fixed;
@@ -34,15 +33,10 @@
         }
 
         @keyframes overlayShift {
-            0%, 100% {
-                opacity: 0.6;
-            }
-            50% {
-                opacity: 0.8;
-            }
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 0.8; }
         }
 
-        /* Floating Particles */
         body::after {
             content: '';
             position: fixed;
@@ -65,44 +59,6 @@
             100% { transform: translateY(-100px) translateX(50px); }
         }
 
-        /* Logo Container */
-        .logo-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 12px 18px;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(220, 20, 60, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(220, 20, 60, 0.2);
-            animation: logoFloat 3s ease-in-out infinite;
-        }
-
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .logo-container:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 40px rgba(220, 20, 60, 0.7);
-            background: rgba(255, 255, 255, 0.98);
-        }
-
-        .logo-container img {
-            max-width: 140px;
-            max-height: 100px;
-            object-fit: contain;
-            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2));
-        }
-
-        /* Header */
         header {
             background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
             color: white;
@@ -174,38 +130,35 @@
             }
         }
 
-        /* Container */
-        .container {
+        /* Foto Banner Section dengan ANIMASI ZOOM */
+        .foto-banner {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
             position: relative;
             z-index: 10;
+            text-align: center;
         }
 
-        /* Menu Section */
-        .menu-section {
-            background: rgba(255, 255, 255, 0.98);
-            padding: 35px;
-            border-radius: 16px;
-            margin-bottom: 35px;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
-            backdrop-filter: blur(15px);
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            animation: slideUpScale 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s backwards;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .menu-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
+        .foto-banner img {
             width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(220, 20, 60, 0.1) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
+            max-width: 600px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            animation: zoomPulse 3s ease-in-out infinite;
+        }
+
+        /* ANIMASI ZOOM - Membesar dan Mengecil */
+        @keyframes zoomPulse {
+            0%, 100% {
+                transform: scale(1);
+                filter: drop-shadow(0 15px 50px rgba(0, 0, 0, 0.3));
+            }
+            50% {
+                transform: scale(1.08);
+                filter: drop-shadow(0 20px 60px rgba(220, 20, 60, 0.4));
+            }
         }
 
         @keyframes slideUpScale {
@@ -219,9 +172,25 @@
             }
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .menu-section {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 35px;
+            border-radius: 16px;
+            margin-bottom: 35px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            animation: slideUpScale 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s backwards;
+            position: relative;
+            overflow: hidden;
         }
 
         .menu-section h2 {
@@ -266,21 +235,6 @@
             overflow: hidden;
         }
 
-        .menu-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
-            transition: left 0.5s;
-        }
-
-        .menu-btn:hover::before {
-            left: 100%;
-        }
-
         .menu-btn:hover {
             background: #DC143C;
             color: white;
@@ -294,7 +248,6 @@
             box-shadow: 0 8px 25px rgba(220, 20, 60, 0.5);
         }
 
-        /* Category Section */
         .category-section {
             background: rgba(255, 255, 255, 0.98);
             padding: 35px;
@@ -306,17 +259,6 @@
             animation: slideUpScale 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s backwards;
             position: relative;
             overflow: hidden;
-        }
-
-        .category-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(220, 20, 60, 0.1) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
         }
 
         .category-section h2 {
@@ -372,7 +314,6 @@
             border-color: #DC143C;
         }
 
-        /* Price Table */
         .price-table {
             display: none;
             margin-top: 35px;
@@ -397,22 +338,6 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
-        }
-
-        .price-table h3::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            animation: shine 2s infinite;
-        }
-
-        @keyframes shine {
-            0% { left: -100%; }
-            100% { left: 100%; }
         }
 
         table {
@@ -462,12 +387,6 @@
             box-shadow: inset 0 0 20px rgba(220, 20, 60, 0.2);
         }
 
-        .jumlah-cell {
-            color: #000;
-            font-weight: 800;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
         .harga-cell {
             color: #DC143C;
             font-weight: 800;
@@ -490,31 +409,11 @@
             overflow: hidden;
         }
 
-        .order-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .order-btn:hover::before {
-            left: 100%;
-        }
-
         .order-btn:hover {
             transform: scale(1.12) translateY(-3px);
             box-shadow: 0 8px 20px rgba(220, 20, 60, 0.6);
         }
 
-        .order-btn:active {
-            transform: scale(0.95);
-        }
-
-        /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
             color: white;
@@ -526,17 +425,6 @@
             animation: slideUpScale 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s backwards;
             position: relative;
             overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: shine 3s infinite;
         }
 
         .cta-section h2 {
@@ -559,7 +447,6 @@
             margin-bottom: 8px;
         }
 
-        /* Promo Text */
         .promo-section {
             background: rgba(255, 255, 255, 0.98);
             padding: 40px;
@@ -571,17 +458,6 @@
             animation: slideUpScale 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s backwards;
             position: relative;
             overflow: hidden;
-        }
-
-        .promo-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(220, 20, 60, 0.08) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
         }
 
         .promo-content {
@@ -617,7 +493,6 @@
             border-radius: 8px;
         }
 
-        /* Footer */
         footer {
             background: rgba(0, 0, 0, 0.9);
             color: white;
@@ -631,85 +506,29 @@
             backdrop-filter: blur(5px);
         }
 
-        footer p {
-            opacity: 0.95;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 26px;
                 letter-spacing: 1px;
             }
 
-            header p {
-                font-size: 13px;
-            }
-
-            .logo-container {
-                top: 10px;
-                right: 10px;
-                padding: 8px 12px;
-            }
-
-            .logo-container img {
-                max-width: 110px;
-                max-height: 70px;
-            }
-
-            .menu-section, .category-section, .promo-section {
-                padding: 25px;
-            }
-
-            .container {
-                padding: 25px 15px;
-            }
-
-            table {
-                font-size: 12px;
-            }
-
-            th, td {
-                padding: 12px;
-            }
-
-            .menu-buttons {
-                gap: 10px;
-            }
-
-            .menu-btn {
-                padding: 10px 16px;
-                font-size: 12px;
-            }
-
-            .cta-section {
-                padding: 35px 25px;
-            }
-
-            .cta-section h2 {
-                font-size: 22px;
-            }
-
-            .promo-title {
-                font-size: 20px;
-            }
-
-            .promo-text {
-                font-size: 14px;
+            .foto-banner img {
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="logo-container">
-        <img src="https://images.weserv.nl/?url=ibb.co/ZR5W1wYJ" alt="Logo Anda">
-    </div>
-
     <header>
         <h1>OPEN JASA SUNTIK ALL SOSMED BY POKER STORE</h1>
         <p>KLIK HARGA DAN SOSMED YANG INGIN DI SUNTIK</p>
         <p>OTOMATIS BAKALAN DI ARAHIN KE WHATSAPP ADMIN</p>
     </header>
+
+    <!-- Foto Banner dengan ANIMASI ZOOM -->
+    <div class="foto-banner">
+        <img src="https://i.ibb.co/BVChvSft/20260218-020200.png" alt="Poker Store">
+    </div>
 
     <div class="container">
         <!-- Menu Sosmed -->
@@ -777,183 +596,71 @@
                 follower: [
                     { jumlah: '100 Follower', harga: '4K' },
                     { jumlah: '200 Follower', harga: '6K' },
-                    { jumlah: '300 Follower', harga: '7K' },
-                    { jumlah: '400 Follower', harga: '8K' },
                     { jumlah: '500 Follower', harga: '10K' },
-                    { jumlah: '600 Follower', harga: '11K' },
-                    { jumlah: '700 Follower', harga: '12K' },
-                    { jumlah: '800 Follower', harga: '13K' },
-                    { jumlah: '900 Follower', harga: '14K' },
                     { jumlah: '1000 Follower', harga: '16K' },
-                    { jumlah: '1100 Follower', harga: '17,5K' },
-                    { jumlah: '1200 Follower', harga: '19K' },
-                    { jumlah: '1300 Follower', harga: '20,5K' },
-                    { jumlah: '1400 Follower', harga: '22K' },
-                    { jumlah: '1500 Follower', harga: '23,5K' },
-                    { jumlah: '1600 Follower', harga: '25K' },
-                    { jumlah: '1700 Follower', harga: '26,5K' },
-                    { jumlah: '1800 Follower', harga: '28K' },
-                    { jumlah: '1900 Follower', harga: '29,5K' },
                     { jumlah: '2000 Follower', harga: '31K' }
                 ],
                 likes: [
                     { jumlah: '1000 Likes', harga: '4K' },
-                    { jumlah: '2000 Likes', harga: '6K' },
-                    { jumlah: '3000 Likes', harga: '8K' },
-                    { jumlah: '4000 Likes', harga: '10K' },
                     { jumlah: '5000 Likes', harga: '12K' },
-                    { jumlah: '6000 Likes', harga: '14K' },
-                    { jumlah: '7000 Likes', harga: '16K' },
-                    { jumlah: '8000 Likes', harga: '18K' },
-                    { jumlah: '9000 Likes', harga: '20K' },
                     { jumlah: '10000 Likes', harga: '22K' }
                 ],
                 views: [
                     { jumlah: '4000 Views', harga: '2K' },
-                    { jumlah: '8000 Views', harga: '3K' },
-                    { jumlah: '12000 Views', harga: '4K' },
-                    { jumlah: '16000 Views', harga: '5K' },
                     { jumlah: '20000 Views', harga: '6K' },
-                    { jumlah: '24000 Views', harga: '7K' },
-                    { jumlah: '28000 Views', harga: '8K' },
-                    { jumlah: '32000 Views', harga: '9K' },
-                    { jumlah: '36000 Views', harga: '10K' },
                     { jumlah: '40000 Views', harga: '11K' }
                 ],
                 komentar: [
                     { jumlah: '40 Komentar', harga: '2K' },
-                    { jumlah: '80 Komentar', harga: '3K' },
-                    { jumlah: '120 Komentar', harga: '4K' },
-                    { jumlah: '160 Komentar', harga: '5K' },
                     { jumlah: '200 Komentar', harga: '6K' },
-                    { jumlah: '240 Komentar', harga: '7K' },
-                    { jumlah: '280 Komentar', harga: '8K' },
-                    { jumlah: '320 Komentar', harga: '9K' },
-                    { jumlah: '360 Komentar', harga: '10K' },
                     { jumlah: '400 Komentar', harga: '11K' }
                 ]
             },
             instagram: {
                 follower: [
                     { jumlah: '100 Follower', harga: '3K' },
-                    { jumlah: '200 Follower', harga: '5K' },
-                    { jumlah: '300 Follower', harga: '7K' },
-                    { jumlah: '400 Follower', harga: '9K' },
                     { jumlah: '500 Follower', harga: '11K' },
-                    { jumlah: '600 Follower', harga: '12K' },
-                    { jumlah: '700 Follower', harga: '13K' },
-                    { jumlah: '800 Follower', harga: '14K' },
-                    { jumlah: '900 Follower', harga: '15K' },
-                    { jumlah: '1000 Follower', harga: '16K' },
-                    { jumlah: '1100 Follower', harga: '17,5K' },
-                    { jumlah: '1200 Follower', harga: '19K' },
-                    { jumlah: '1300 Follower', harga: '20,5K' },
-                    { jumlah: '1400 Follower', harga: '22K' },
-                    { jumlah: '1500 Follower', harga: '23,5K' },
-                    { jumlah: '1600 Follower', harga: '25K' },
-                    { jumlah: '1700 Follower', harga: '26K' },
-                    { jumlah: '1800 Follower', harga: '27K' },
-                    { jumlah: '1900 Follower', harga: '28K' },
                     { jumlah: '2000 Follower', harga: '29K' }
                 ],
                 likes: [
                     { jumlah: '500 Likes', harga: '4K' },
-                    { jumlah: '1000 Likes', harga: '7K' },
-                    { jumlah: '1500 Likes', harga: '10K' },
-                    { jumlah: '2000 Likes', harga: '13K' },
                     { jumlah: '2500 Likes', harga: '15K' },
-                    { jumlah: '3000 Likes', harga: '17K' },
-                    { jumlah: '3500 Likes', harga: '19K' },
-                    { jumlah: '4000 Likes', harga: '21K' },
-                    { jumlah: '4500 Likes', harga: '22K' },
                     { jumlah: '5000 Likes', harga: '23K' }
                 ],
                 views: [
                     { jumlah: '4000 Views', harga: '3K' },
-                    { jumlah: '8000 Views', harga: '4K' },
-                    { jumlah: '12000 Views', harga: '5K' },
-                    { jumlah: '16000 Views', harga: '6K' },
                     { jumlah: '20000 Views', harga: '7K' },
-                    { jumlah: '24000 Views', harga: '8K' },
-                    { jumlah: '28000 Views', harga: '9K' },
-                    { jumlah: '32000 Views', harga: '10K' },
-                    { jumlah: '36000 Views', harga: '11K' },
                     { jumlah: '40000 Views', harga: '12K' }
                 ],
                 komentar: [
                     { jumlah: '40 Komentar', harga: '2K' },
-                    { jumlah: '80 Komentar', harga: '3K' },
-                    { jumlah: '120 Komentar', harga: '4K' },
-                    { jumlah: '160 Komentar', harga: '5K' },
                     { jumlah: '200 Komentar', harga: '6K' },
-                    { jumlah: '240 Komentar', harga: '7K' },
-                    { jumlah: '280 Komentar', harga: '8K' },
-                    { jumlah: '320 Komentar', harga: '9K' },
-                    { jumlah: '360 Komentar', harga: '10K' },
                     { jumlah: '400 Komentar', harga: '11K' }
                 ]
             },
             youtube: {
                 likes: [
                     { jumlah: '500 Likes', harga: '4K' },
-                    { jumlah: '1000 Likes', harga: '6K' },
-                    { jumlah: '1500 Likes', harga: '8K' },
-                    { jumlah: '2000 Likes', harga: '10K' },
                     { jumlah: '2500 Likes', harga: '12K' },
-                    { jumlah: '3000 Likes', harga: '14K' },
-                    { jumlah: '3500 Likes', harga: '16K' },
-                    { jumlah: '4000 Likes', harga: '18K' },
-                    { jumlah: '4500 Likes', harga: '19K' },
                     { jumlah: '5000 Likes', harga: '20K' }
                 ],
                 views: [
                     { jumlah: '100 Views', harga: '3K' },
-                    { jumlah: '200 Views', harga: '6K' },
-                    { jumlah: '300 Views', harga: '9K' },
-                    { jumlah: '400 Views', harga: '11K' },
                     { jumlah: '500 Views', harga: '13K' },
-                    { jumlah: '600 Views', harga: '15K' },
-                    { jumlah: '700 Views', harga: '16K' },
-                    { jumlah: '800 Views', harga: '18K' },
-                    { jumlah: '900 Views', harga: '20K' },
                     { jumlah: '1000 Views', harga: '22K' }
                 ]
             },
             telegram: {
                 pengikut: [
                     { jumlah: '100 Pengikut', harga: '1K' },
-                    { jumlah: '200 Pengikut', harga: '2K' },
-                    { jumlah: '300 Pengikut', harga: '3K' },
-                    { jumlah: '400 Pengikut', harga: '4K' },
                     { jumlah: '500 Pengikut', harga: '5K' },
-                    { jumlah: '600 Pengikut', harga: '6K' },
-                    { jumlah: '700 Pengikut', harga: '7K' },
-                    { jumlah: '800 Pengikut', harga: '8K' },
-                    { jumlah: '900 Pengikut', harga: '9K' },
                     { jumlah: '1000 Pengikut', harga: '10K' }
                 ]
             },
             whatsapp: {
                 pengikut: [
                     { jumlah: '50 Pengikut', harga: '3K' },
-                    { jumlah: '100 Pengikut', harga: '6K' },
-                    { jumlah: '150 Pengikut', harga: '9K' },
-                    { jumlah: '200 Pengikut', harga: '12K' },
-                    { jumlah: '250 Pengikut', harga: '15K' },
-                    { jumlah: '300 Pengikut', harga: '17K' },
-                    { jumlah: '350 Pengikut', harga: '19K' },
-                    { jumlah: '400 Pengikut', harga: '21K' },
-                    { jumlah: '450 Pengikut', harga: '22K' },
                     { jumlah: '500 Pengikut', harga: '23K' },
-                    { jumlah: '550 Pengikut', harga: '24,5K' },
-                    { jumlah: '600 Pengikut', harga: '26K' },
-                    { jumlah: '650 Pengikut', harga: '27,5K' },
-                    { jumlah: '700 Pengikut', harga: '29K' },
-                    { jumlah: '750 Pengikut', harga: '30K' },
-                    { jumlah: '800 Pengikut', harga: '31K' },
-                    { jumlah: '850 Pengikut', harga: '32K' },
-                    { jumlah: '900 Pengikut', harga: '33K' },
-                    { jumlah: '950 Pengikut', harga: '34K' },
                     { jumlah: '1000 Pengikut', harga: '35K' }
                 ]
             }
@@ -1006,11 +713,6 @@
                 data = priceData[currentSocial][categoryKey];
             }
 
-            if (data.length === 0) {
-                container.innerHTML = '<p>Data tidak tersedia</p>';
-                return;
-            }
-
             const capitalizedCategory = activeCategory.charAt(0).toUpperCase() + activeCategory.slice(1);
             const capitalizedSocial = currentSocial.charAt(0).toUpperCase() + currentSocial.slice(1);
 
@@ -1028,7 +730,7 @@
                         <tbody>
                             ${data.map(item => `
                                 <tr>
-                                    <td class="jumlah-cell">${item.jumlah}</td>
+                                    <td>${item.jumlah}</td>
                                     <td class="harga-cell">Rp ${item.harga}</td>
                                     <td>
                                         <button class="order-btn" onclick="orderNow('${item.jumlah}', '${item.harga}', '${capitalizedSocial}', '${capitalizedCategory}')">
