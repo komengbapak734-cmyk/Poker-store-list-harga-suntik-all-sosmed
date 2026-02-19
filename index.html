@@ -1,4 +1,3 @@
-Ini dia kode HTML lengkapnya, silakan salin semua kode di bawah ini:
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -8,297 +7,77 @@ Ini dia kode HTML lengkapnya, silakan salin semua kode di bawah ini:
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --red: #E31E24;
-    --red-dark: #b01418;
-    --red-light: #ff3b41;
-    --white: #ffffff;
-    --off-white: #f5f5f5;
-    --gray: #e0e0e0;
-    --dark: #1a1a1a;
-    --border: rgba(227,30,36,0.3);
+    --red: #E31E24; --red-dark: #b01418; --white: #ffffff;
+    --gray: #e0e0e0; --dark: #1a1a1a; --border: rgba(227,30,36,0.3);
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background: #f8f8f8;
-    color: var(--dark);
-    overflow-x: hidden;
-  }
-
-  header {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 3px solid var(--red);
-    box-shadow: 0 4px 20px rgba(227,30,36,0.4);
-  }
-
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f8f8f8; color: var(--dark); overflow-x: hidden; }
+  header { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--red); box-shadow: 0 4px 20px rgba(227,30,36,0.4); }
   .logo-area { display: flex; align-items: center; gap: 14px; }
-
-  .logo-img {
-    width: 70px; height: 70px; object-fit: contain;
-    filter: drop-shadow(0 0 8px rgba(227,30,36,0.6));
-  }
-
-  .logo-text h1 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 26px; font-weight: 800;
-    color: var(--white); letter-spacing: 2px; line-height: 1;
-  }
-
+  .logo-img { width: 70px; height: 70px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(227,30,36,0.6)); }
+  .logo-text h1 { font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 800; color: var(--white); letter-spacing: 2px; line-height: 1; }
   .logo-text h1 span { color: var(--red); }
-
-  .logo-text p {
-    font-size: 11px; color: #aaa;
-    letter-spacing: 2px; text-transform: uppercase;
-  }
-
-  .header-badge {
-    background: var(--red); color: white;
-    font-family: 'Outfit', sans-serif;
-    font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
-    padding: 6px 14px; border-radius: 4px;
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(227,30,36,0.5); }
-    50% { box-shadow: 0 0 0 8px rgba(227,30,36,0); }
-  }
-
-  .hero {
-    background: linear-gradient(160deg, var(--red) 0%, var(--red-dark) 60%, #7a0a0d 100%);
-    color: white; text-align: center;
-    padding: 48px 20px 40px;
-    position: relative; overflow: hidden;
-  }
-
-  .hero::before {
-    content: ''; position: absolute; inset: 0;
-    background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.03) 20px, rgba(255,255,255,0.03) 40px);
-  }
-
-  .hero h2 {
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(24px, 5vw, 44px);
-    font-weight: 800; letter-spacing: 2px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.4); position: relative;
-  }
-
-  .hero p {
-    margin-top: 10px; font-size: 14px;
-    letter-spacing: 1px; opacity: 0.9;
-    font-weight: 500; position: relative;
-  }
-
-  .hero-badge {
-    display: inline-block; margin-top: 16px;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.3);
-    color: white; padding: 8px 20px; border-radius: 50px;
-    font-size: 12px; letter-spacing: 2px;
-    font-weight: 700; position: relative;
-  }
-
-  .container { max-width: 960px; margin: 0 auto; padding: 32px 16px; }
-
-  .section-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 18px; font-weight: 700; letter-spacing: 1.5px;
-    color: var(--red); margin-bottom: 14px;
-    display: flex; align-items: center; gap: 10px;
-  }
-
-  .section-title::after {
-    content: ''; flex: 1; height: 2px;
-    background: linear-gradient(to right, var(--red), transparent);
-  }
-
-  .filter-block {
-    background: white; border: 1px solid var(--border);
-    border-radius: 12px; padding: 20px; margin-bottom: 20px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  }
-
-  .tabs { display: flex; flex-wrap: wrap; gap: 8px; }
-
-  .tab-btn {
-    background: white; border: 2px solid var(--gray);
-    color: var(--dark); padding: 9px 16px; border-radius: 8px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 13px; font-weight: 700; letter-spacing: 0.5px;
-    cursor: pointer; transition: all 0.2s;
-    display: inline-flex; align-items: center; gap: 7px;
-  }
-
-  .tab-btn:hover { border-color: var(--red); color: var(--red); }
-  .tab-btn.active { background: var(--red); border-color: var(--red); color: white; }
-  .tab-btn.active svg.tab-icon { filter: brightness(0) invert(1); }
-
-  .tab-icon { width: 22px; height: 22px; vertical-align: middle; flex-shrink: 0; }
-  .card-icon { width: 32px; height: 32px; flex-shrink: 0; }
-
-  .tables-grid { display: flex; flex-direction: column; gap: 24px; }
-
-  .price-card {
-    background: white; border: 1px solid var(--border);
-    border-radius: 14px; overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-    transition: box-shadow 0.2s; display: none;
-  }
-
-  .price-card.visible { display: block; }
-  .price-card:hover { box-shadow: 0 8px 32px rgba(227,30,36,0.12); }
-
-  .card-header {
-    background: linear-gradient(135deg, var(--red), var(--red-dark));
-    color: white; padding: 14px 20px;
-    display: flex; align-items: center; gap: 12px;
-  }
-
-  .card-header h3 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 18px; font-weight: 700; letter-spacing: 1px;
-  }
-
-  .card-header .sub {
-    font-size: 11px; opacity: 0.8; letter-spacing: 1px; margin-top: 1px;
-  }
-
-  table { width: 100%; border-collapse: collapse; }
-
-  thead th {
-    background: #1a1a1a; color: white;
-    padding: 10px 20px; text-align: left;
-    font-family: 'Outfit', sans-serif;
-    font-size: 13px; font-weight: 700; letter-spacing: 1.5px;
-  }
-
-  thead th:last-child { text-align: right; }
-
-  tbody tr {
-    border-bottom: 1px solid #f0f0f0;
-    cursor: pointer; transition: background 0.15s;
-  }
-
-  tbody tr:last-child { border-bottom: none; }
-  tbody tr:hover { background: #fff5f5; }
-
-  tbody td {
-    padding: 11px 20px; font-size: 14px;
-    font-weight: 600; color: var(--dark);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-  }
-
-  tbody td:last-child {
-    text-align: right; color: var(--red);
-    font-weight: 700; font-family: 'Space Grotesk', sans-serif;
-    font-size: 13px;
-  }
-
-  .order-btn {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--red); color: white;
-    padding: 5px 12px; border-radius: 6px;
-    font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    text-decoration: none; transition: background 0.2s; float: right;
-  }
-
-  .order-btn:hover { background: var(--red-dark); }
-
-  .cta-section {
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-    color: white; text-align: center;
-    padding: 40px 20px; margin-top: 32px;
-    border-radius: 16px; position: relative; overflow: hidden;
-  }
-
-  .cta-section::before {
-    content: ''; position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: var(--red);
-  }
-
-  .cta-section h3 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 26px; font-weight: 800;
-    letter-spacing: 1px; margin-bottom: 8px;
-  }
-
-  .cta-section h3 span { color: var(--red); }
-  .cta-section p { font-size: 14px; color: #aaa; margin-bottom: 20px; }
-
-  .cta-wa {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: #25D366; color: white;
-    padding: 14px 32px; border-radius: 50px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 16px; font-weight: 800; letter-spacing: 1px;
-    text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 16px rgba(37,211,102,0.4);
-  }
-
-  .cta-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.5); }
-
-  footer {
-    background: #111; color: #666;
-    text-align: center; padding: 20px;
-    font-size: 12px; letter-spacing: 1px;
-    border-top: 2px solid var(--red);
-  }
-
-  footer span { color: var(--red); }
-
-  @media (max-width: 600px) {
-    .logo-img { width: 55px; height: 55px; }
-    .logo-text h1 { font-size: 22px; }
-    tbody td { padding: 10px 12px; font-size: 13px; }
-    thead th { padding: 10px 12px; }
-  }
-
-  /* DARK MODE */
-  body.dark {
-    --white: #1e1e1e; --off-white: #2a2a2a;
-    --gray: #444; --dark: #f0f0f0;
-    --border: rgba(227,30,36,0.4);
-    background: #111; color: #f0f0f0;
-  }
-
-  body.dark .filter-block { background: #1e1e1e; border-color: rgba(227,30,36,0.3); }
-  body.dark .tab-btn { background: #2a2a2a; border-color: #444; color: #ddd; }
-  body.dark .tab-btn:hover { border-color: var(--red); color: var(--red); }
-  body.dark .tab-btn.active { background: var(--red); border-color: var(--red); color: white; }
-  body.dark .price-card { background: #1e1e1e; border-color: rgba(227,30,36,0.25); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
-  body.dark tbody tr { border-bottom-color: #2d2d2d; }
-  body.dark tbody tr:hover { background: #2a1a1a; }
-  body.dark tbody td { color: #f0f0f0; }
-  body.dark thead th { background: #0d0d0d; }
-  body.dark footer { background: #0a0a0a; color: #555; }
-  body.dark .cta-section { background: linear-gradient(135deg, #0d0d0d, #1a1a1a); }
-
-  .dark-toggle {
-    background: rgba(255,255,255,0.1);
-    border: 2px solid rgba(255,255,255,0.2);
-    color: white; width: 42px; height: 42px;
-    border-radius: 50%; cursor: pointer; font-size: 18px;
-    display: flex; align-items: center; justify-content: center;
-    transition: all 0.3s; flex-shrink: 0;
-  }
-
-  .dark-toggle:hover {
-    background: rgba(227,30,36,0.3);
-    border-color: var(--red); transform: rotate(20deg);
-  }
-
-  body.dark .dark-toggle { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); }
+  .logo-text p { font-size: 11px; color: #aaa; letter-spacing: 2px; text-transform: uppercase; }
+  .header-badge { background: var(--red); color: white; font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; padding: 6px 14px; border-radius: 4px; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(227,30,36,0.5)} 50%{box-shadow:0 0 0 8px rgba(227,30,36,0)} }
+  .hero { background: linear-gradient(160deg, var(--red) 0%, var(--red-dark) 60%, #7a0a0d 100%); color: white; text-align: center; padding: 48px 20px 40px; position: relative; overflow: hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(255,255,255,0.03) 20px,rgba(255,255,255,0.03) 40px); }
+  .hero h2 { font-family:'Outfit',sans-serif; font-size:clamp(24px,5vw,44px); font-weight:800; letter-spacing:2px; text-shadow:2px 2px 8px rgba(0,0,0,0.4); position:relative; }
+  .hero p { margin-top:10px; font-size:14px; letter-spacing:1px; opacity:0.9; font-weight:500; position:relative; }
+  .hero-badge { display:inline-block; margin-top:16px; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); color:white; padding:8px 20px; border-radius:50px; font-size:12px; letter-spacing:2px; font-weight:700; position:relative; }
+  .container { max-width:960px; margin:0 auto; padding:32px 16px; }
+  .section-title { font-family:'Outfit',sans-serif; font-size:18px; font-weight:700; letter-spacing:1.5px; color:var(--red); margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+  .section-title::after { content:''; flex:1; height:2px; background:linear-gradient(to right,var(--red),transparent); }
+  .filter-block { background:white; border:1px solid var(--border); border-radius:12px; padding:20px; margin-bottom:20px; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+  .tabs { display:flex; flex-wrap:wrap; gap:8px; }
+  .tab-btn { background:white; border:2px solid var(--gray); color:var(--dark); padding:9px 16px; border-radius:8px; font-family:'Plus Jakarta Sans',sans-serif; font-size:13px; font-weight:700; cursor:pointer; transition:all 0.2s; display:inline-flex; align-items:center; gap:7px; }
+  .tab-btn:hover { border-color:var(--red); color:var(--red); }
+  .tab-btn.active { background:var(--red); border-color:var(--red); color:white; }
+  .tab-btn.active svg { filter:brightness(0) invert(1); }
+  .tab-icon { width:22px; height:22px; vertical-align:middle; flex-shrink:0; }
+  .card-icon { width:32px; height:32px; flex-shrink:0; }
+  .tables-grid { display:flex; flex-direction:column; gap:24px; }
+  .price-card { background:white; border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.07); transition:box-shadow 0.2s; display:none; }
+  .price-card.visible { display:block; }
+  .price-card:hover { box-shadow:0 8px 32px rgba(227,30,36,0.12); }
+  .card-header { background:linear-gradient(135deg,var(--red),var(--red-dark)); color:white; padding:14px 20px; display:flex; align-items:center; gap:12px; }
+  .card-header h3 { font-family:'Outfit',sans-serif; font-size:18px; font-weight:700; letter-spacing:1px; }
+  .card-header .sub { font-size:11px; opacity:0.8; letter-spacing:1px; margin-top:1px; }
+  table { width:100%; border-collapse:collapse; }
+  thead th { background:#1a1a1a; color:white; padding:10px 20px; text-align:left; font-family:'Outfit',sans-serif; font-size:13px; font-weight:700; letter-spacing:1.5px; }
+  thead th:last-child { text-align:right; }
+  tbody tr { border-bottom:1px solid #f0f0f0; cursor:pointer; transition:background 0.15s; }
+  tbody tr:last-child { border-bottom:none; }
+  tbody tr:hover { background:#fff5f5; }
+  tbody td { padding:11px 20px; font-size:14px; font-weight:600; color:var(--dark); font-family:'Plus Jakarta Sans',sans-serif; }
+  tbody td:last-child { text-align:right; color:var(--red); font-weight:700; font-family:'Space Grotesk',sans-serif; font-size:13px; }
+  .order-btn { display:inline-flex; align-items:center; gap:6px; background:var(--red); color:white; padding:5px 12px; border-radius:6px; font-size:11px; font-weight:700; font-family:'Plus Jakarta Sans',sans-serif; text-decoration:none; transition:background 0.2s; float:right; }
+  .order-btn:hover { background:var(--red-dark); }
+  .cta-section { background:linear-gradient(135deg,#1a1a1a,#2d2d2d); color:white; text-align:center; padding:40px 20px; margin-top:32px; border-radius:16px; position:relative; overflow:hidden; }
+  .cta-section::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--red); }
+  .cta-section h3 { font-family:'Outfit',sans-serif; font-size:26px; font-weight:800; letter-spacing:1px; margin-bottom:8px; }
+  .cta-section h3 span { color:var(--red); }
+  .cta-section p { font-size:14px; color:#aaa; margin-bottom:20px; }
+  .cta-wa { display:inline-flex; align-items:center; gap:10px; background:#25D366; color:white; padding:14px 32px; border-radius:50px; font-family:'Plus Jakarta Sans',sans-serif; font-size:16px; font-weight:800; text-decoration:none; transition:transform 0.2s,box-shadow 0.2s; box-shadow:0 4px 16px rgba(37,211,102,0.4); }
+  .cta-wa:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(37,211,102,0.5); }
+  footer { background:#111; color:#666; text-align:center; padding:20px; font-size:12px; letter-spacing:1px; border-top:2px solid var(--red); }
+  footer span { color:var(--red); }
+  @media(max-width:600px){ .logo-img{width:55px;height:55px} .logo-text h1{font-size:22px} tbody td{padding:10px 12px;font-size:13px} thead th{padding:10px 12px} }
+  body.dark { background:#111; color:#f0f0f0; }
+  body.dark .filter-block { background:#1e1e1e; border-color:rgba(227,30,36,0.3); }
+  body.dark .tab-btn { background:#2a2a2a; border-color:#444; color:#ddd; }
+  body.dark .tab-btn:hover { border-color:var(--red); color:var(--red); }
+  body.dark .tab-btn.active { background:var(--red); border-color:var(--red); color:white; }
+  body.dark .price-card { background:#1e1e1e; border-color:rgba(227,30,36,0.25); box-shadow:0 4px 20px rgba(0,0,0,0.4); }
+  body.dark tbody tr { border-bottom-color:#2d2d2d; }
+  body.dark tbody tr:hover { background:#2a1a1a; }
+  body.dark tbody td { color:#f0f0f0; }
+  body.dark thead th { background:#0d0d0d; }
+  body.dark footer { background:#0a0a0a; color:#555; }
+  body.dark .cta-section { background:linear-gradient(135deg,#0d0d0d,#1a1a1a); }
+  .dark-toggle { background:rgba(255,255,255,0.1); border:2px solid rgba(255,255,255,0.2); color:white; width:42px; height:42px; border-radius:50%; cursor:pointer; font-size:18px; display:flex; align-items:center; justify-content:center; transition:all 0.3s; flex-shrink:0; }
+  .dark-toggle:hover { background:rgba(227,30,36,0.3); border-color:var(--red); transform:rotate(20deg); }
+  body.dark .dark-toggle { background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.15); }
 </style>
 </head>
 <body>
@@ -312,7 +91,7 @@ Ini dia kode HTML lengkapnya, silakan salin semua kode di bawah ini:
     </div>
   </div>
   <div class="header-badge">🔥 OPEN ORDER</div>
-  <button class="dark-toggle" id="darkToggle" title="Mode Gelap" onclick="toggleDark()">🌙</button>
+  <button class="dark-toggle" id="darkToggle" onclick="toggleDark()">🌙</button>
 </header>
 
 <div class="hero">
@@ -350,98 +129,62 @@ Ini dia kode HTML lengkapnya, silakan salin semua kode di bawah ini:
   <div class="tables-grid" id="tablesGrid">
 
     <div class="price-card visible" data-sosmed="tiktok" data-kat="follower">
-      <div class="card-header">
-        <svg class="card-icon" viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.94a8.28 8.28 0 0 0 4.84 1.55V7.03a4.85 4.85 0 0 1-1.07-.34z" fill="white"/></svg>
-        <div><h3>Follower TikTok</h3><div class="sub">TIKTOK • FOLLOWER</div></div>
-      </div>
+      <div class="card-header"><svg class="card-icon" viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.94a8.28 8.28 0 0 0 4.84 1.55V7.03a4.85 4.85 0 0 1-1.07-.34z" fill="white"/></svg><div><h3>Follower TikTok</h3><div class="sub">TIKTOK • FOLLOWER</div></div></div>
       <table><thead><tr><th>Jumlah</th><th style="text-align:right">Harga / Order</th></tr></thead><tbody id="tb-follower-tiktok"></tbody></table>
     </div>
 
     <div class="price-card visible" data-sosmed="tiktok" data-kat="likes">
-      <div class="card-header">
-        <svg class="card-icon" viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.94a8.28 8.28 0 0 0 4.84 1.55V7.03a4.85 4.85 0 0 1-1.07-.34z" fill="white"/></svg>
-        <div><h3>Likes TikTok</h3><div class="sub">TIKTOK • LIKES</div></div>
-      </div>
+      <div class="card-header"><svg class="card-icon" viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.94a8.28 8.28 0 0 0 4.84 1.55V7.03a4.85 4.85 0 0 1-1.07-.34z" fill="white"/></svg><div><h3>Likes TikTok</h3><div class="sub">TIKTOK • LIKES</div></div></div>
       <table><thead><tr><th>Jumlah</th><th style="text-align:right">Harga / Order</th></tr></thead><tbody id="tb-likes-tiktok"></tbody></table>
     </div>
 
     <div class="price-card visible" data-sosmed="tiktok" data-kat="views">
-      <div class="card-header">
-        <svg class="card-icon" viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.94a8.28 8.28 0 0 0 4.84 1.55V7.03a4.85 4.85 0 0 1-1.07-.34z" fill="white"/></svg>
-        <div><h3>Views TikTok</h3><div class="sub">TIKTOK • VIEWS</div></div>
-      </div>
+      <div class="card-header"><svg class="card-icon" viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.94a8.28 8.28 0 0 0 4.84 1.55V7.03a4.85 4.85 0 0 1-1.07-.34z" fill="white"/></svg><div><h3>Views TikTok</h3><div class="sub">TIKTOK • VIEWS</div></div></div>
       <table><thead><tr><th>Jumlah</th><th style="text-align:right">Harga / Order</th></tr></thead><tbody id="tb-views-tiktok"></tbody></table>
     </div>
 
     <div class="price-card visible" data-sosmed="tiktok" data-kat="komentar">
-      <div class="card-header">
-        <svg class="card-icon" viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.94a8.28 8.28 0 0 0 4.84 1.55V7.03a4.85 4.85 0 0 1-1.07-.34z" fill="white"/></svg>
-        <div><h3>Komentar TikTok</h3><div class="sub">TIKTOK • KOMENTAR</div></div>
-      </div>
+      <div class="card-header"><svg class="card-icon" viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.94a8.28 8.28 0 0 0 4.84 1.55V7.03a4.85 4.85 0 0 1-1.07-.34z" fill="white"/></svg><div><h3>Komentar TikTok</h3><div class="sub">TIKTOK • KOMENTAR</div></div></div>
       <table><thead><tr><th>Jumlah</th><th style="text-align:right">Harga / Order</th></tr></thead><tbody id="tb-komentar-tiktok"></tbody></table>
     </div>
 
     <div class="price-card visible" data-sosmed="whatsapp" data-kat="member">
-      <div class="card-header">
-        <svg class="card-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#25D366"/><path d="M12 3.5A8.5 8.5 0 0 0 4.07 16.3L3.5 20.5l4.3-.57A8.5 8.5 0 1 0 12 3.5zm4.95 11.93c-.2.57-1.18 1.1-1.62 1.16-.41.06-.93.08-1.5-.1-.35-.1-.8-.26-1.37-.52-2.4-1.03-3.97-3.45-4.09-3.61-.12-.16-.97-1.29-.97-2.46s.62-1.74.84-1.97c.22-.24.48-.3.64-.3h.46c.15 0 .35-.06.55.42l.7 1.7c.06.14.1.3.02.48-.08.18-.12.29-.24.45l-.36.42c-.12.13-.25.27-.11.53.15.25.64 1.06 1.37 1.71.94.84 1.74 1.1 1.98 1.22.25.12.39.1.54-.06l.39-.46c.17-.2.33-.13.56-.05l1.61.76c.24.11.39.17.45.27.06.1.06.57-.14 1.14z" fill="white"/></svg>
-        <div><h3>Pengikut WhatsApp Saluran</h3><div class="sub">WHATSAPP • PENGIKUT/MEMBER</div></div>
-      </div>
+      <div class="card-header"><svg class="card-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#25D366"/><path d="M12 3.5A8.5 8.5 0 0 0 4.07 16.3L3.5 20.5l4.3-.57A8.5 8.5 0 1 0 12 3.5zm4.95 11.93c-.2.57-1.18 1.1-1.62 1.16-.41.06-.93.08-1.5-.1-.35-.1-.8-.26-1.37-.52-2.4-1.03-3.97-3.45-4.09-3.61-.12-.16-.97-1.29-.97-2.46s.62-1.74.84-1.97c.22-.24.48-.3.64-.3h.46c.15 0 .35-.06.55.42l.7 1.7c.06.14.1.3.02.48-.08.18-.12.29-.24.45l-.36.42c-.12.13-.25.27-.11.53.15.25.64 1.06 1.37 1.71.94.84 1.74 1.1 1.98 1.22.25.12.39.1.54-.06l.39-.46c.17-.2.33-.13.56-.05l1.61.76c.24.11.39.17.45.27.06.1.06.57-.14 1.14z" fill="white"/></svg><div><h3>Pengikut WhatsApp Saluran</h3><div class="sub">WHATSAPP • PENGIKUT/MEMBER</div></div></div>
       <table><thead><tr><th>Jumlah</th><th style="text-align:right">Harga / Order</th></tr></thead><tbody id="tb-member-wa"></tbody></table>
     </div>
 
     <div class="price-card visible" data-sosmed="instagram" data-kat="follower">
-      <div class="card-header">
-        <svg class="card-icon" viewBox="0 0 24 24"><defs><radialGradient id="ig2" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#ig2)"/><path d="M12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z" fill="white"/></svg>
-        <div><h3>Follower Instagram</h3><div class="sub">INSTAGRAM • FOLLOWER</div></div>
-      </div>
+      <div class="card-header"><svg class="card-icon" viewBox="0 0 24 24"><defs><radialGradient id="ig2" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#ig2)"/><path d="M12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z" fill="white"/></svg><div><h3>Follower Instagram</h3><div class="sub">INSTAGRAM • FOLLOWER</div></div></div>
       <table><thead><tr><th>Jumlah</th><th style="text-align:right">Harga / Order</th></tr></thead><tbody id="tb-follower-ig"></tbody></table>
     </div>
 
     <div class="price-card visible" data-sosmed="instagram" data-kat="likes">
-      <div class="card-header">
-        <svg class="card-icon" viewBox="0 0 24 24"><defs><radialGradient id="ig3" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#ig3)"/><path d="M12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z" fill="white"/></svg>
-        <div><h3>Likes Instagram</h3><div class="sub">INSTAGRAM • LIKES</div></div>
-      </div>
+      <div class="card-header"><svg class="card-icon" viewBox="0 0 24 24"><defs><radialGradient id="ig3" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#ig3)"/><path d="M12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z" fill="white"/></svg><div><h3>Likes Instagram</h3><div class="sub">INSTAGRAM • LIKES</div></div></div>
       <table><thead><tr><th>Jumlah</th><th style="text-align:right">Harga / Order</th></tr></thead><tbody id="tb-likes-ig"></tbody></table>
     </div>
 
     <div class="price-card visible" data-sosmed="instagram" data-kat="views">
-      <div class="card-header">
-        <svg class="card-icon" viewBox="0 0 24 24"><defs><radialGradient id="ig4" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#ig4)"/><path d="M12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z" fill="white"/></svg>
-        <div><h3>Views Instagram</h3><div class="sub">INSTAGRAM • VIEWS</div></div>
-      </div>
+      <div class="card-header"><svg class="card-icon" viewBox="0 0 24 24"><defs><radialGradient id="ig4" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#ig4)"/><path d="M12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z" fill="white"/></svg><div><h3>Views Instagram</h3><div class="sub">INSTAGRAM • VIEWS</div></div></div>
       <table><thead><tr><th>Jumlah</th><th style="text-align:right">Harga / Order</th></tr></thead><tbody id="tb-views-ig"></tbody></table>
     </div>
 
     <div class="price-card visible" data-sosmed="instagram" data-kat="komentar">
-      <div class="card-header">
-        <svg class="card-icon" viewBox="0 0 24 24"><defs><radialGradient id="ig5" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#ig5)"/><path d="M12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z" fill="white"/></svg>
-        <div><h3>Komentar Instagram</h3><div class="sub">INSTAGRAM • KOMENTAR</div></div>
-      </div>
+      <div class="card-header"><svg class="card-icon" viewBox="0 0 24 24"><defs><radialGradient id="ig5" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#ig5)"/><path d="M12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z" fill="white"/></svg><div><h3>Komentar Instagram</h3><div class="sub">INSTAGRAM • KOMENTAR</div></div></div>
       <table><thead><tr><th>Jumlah</th><th style="text-align:right">Harga / Order</th></tr></thead><tbody id="tb-komentar-ig"></tbody></table>
     </div>
 
     <div class="price-card visible" data-sosmed="telegram" data-kat="member">
-      <div class="card-header">
-        <svg class="card-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="12" fill="#229ED9"/><path d="M5.5 11.8l11.5-4.4c.53-.19 1 .13.82.93l-1.96 9.23c-.14.65-.53.8-1.07.5l-3-2.2-1.44 1.39c-.16.16-.3.29-.6.29l.21-3.03 5.5-4.97c.24-.21-.05-.33-.37-.12L7.9 13.96 5.1 13.1c-.64-.2-.65-.64.13-.94z" fill="white"/></svg>
-        <div><h3>Pengikut Telegram</h3><div class="sub">TELEGRAM • PENGIKUT/MEMBER</div></div>
-      </div>
+      <div class="card-header"><svg class="card-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="12" fill="#229ED9"/><path d="M5.5 11.8l11.5-4.4c.53-.19 1 .13.82.93l-1.96 9.23c-.14.65-.53.8-1.07.5l-3-2.2-1.44 1.39c-.16.16-.3.29-.6.29l.21-3.03 5.5-4.97c.24-.21-.05-.33-.37-.12L7.9 13.96 5.1 13.1c-.64-.2-.65-.64.13-.94z" fill="white"/></svg><div><h3>Pengikut Telegram</h3><div class="sub">TELEGRAM • PENGIKUT/MEMBER</div></div></div>
       <table><thead><tr><th>Jumlah</th><th style="text-align:right">Harga / Order</th></tr></thead><tbody id="tb-member-tg"></tbody></table>
     </div>
 
     <div class="price-card visible" data-sosmed="youtube" data-kat="likes">
-      <div class="card-header">
-        <svg class="card-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#FF0000"/><path d="M19.8 7.8s-.2-1.4-.8-2c-.76-.8-1.61-.8-2-.85C14.6 4.8 12 4.8 12 4.8s-2.6 0-5 .15c-.39.05-1.24.05-2 .85-.6.6-.8 2-.8 2S4 9.4 4 11v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.76.8 1.76.77 2.2.85C8.8 18.7 12 18.7 12 18.7s2.6 0 5-.17c.39-.05 1.24-.05 2-.85.6-.6.8-2 .8-2s.2-1.6.2-3.2V11c0-1.6-.2-3.2-.2-3.2zM10.2 14.4V9.4l5.4 2.5-5.4 2.5z" fill="white"/></svg>
-        <div><h3>Likes YouTube</h3><div class="sub">YOUTUBE • LIKES</div></div>
-      </div>
+      <div class="card-header"><svg class="card-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#FF0000"/><path d="M19.8 7.8s-.2-1.4-.8-2c-.76-.8-1.61-.8-2-.85C14.6 4.8 12 4.8 12 4.8s-2.6 0-5 .15c-.39.05-1.24.05-2 .85-.6.6-.8 2-.8 2S4 9.4 4 11v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.76.8 1.76.77 2.2.85C8.8 18.7 12 18.7 12 18.7s2.6 0 5-.17c.39-.05 1.24-.05 2-.85.6-.6.8-2 .8-2s.2-1.6.2-3.2V11c0-1.6-.2-3.2-.2-3.2zM10.2 14.4V9.4l5.4 2.5-5.4 2.5z" fill="white"/></svg><div><h3>Likes YouTube</h3><div class="sub">YOUTUBE • LIKES</div></div></div>
       <table><thead><tr><th>Jumlah</th><th style="text-align:right">Harga / Order</th></tr></thead><tbody id="tb-likes-yt"></tbody></table>
     </div>
 
     <div class="price-card visible" data-sosmed="youtube" data-kat="views">
-      <div class="card-header">
-        <svg class="card-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#FF0000"/><path d="M19.8 7.8s-.2-1.4-.8-2c-.76-.8-1.61-.8-2-.85C14.6 4.8 12 4.8 12 4.8s-2.6 0-5 .15c-.39.05-1.24.05-2 .85-.6.6-.8 2-.8 2S4 9.4 4 11v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.76.8 1.76.77 2.2.85C8.8 18.7 12 18.7 12 18.7s2.6 0 5-.17c.39-.05 1.24-.05 2-.85.6-.6.8-2 .8-2s.2-1.6.2-3.2V11c0-1.6-.2-3.2-.2-3.2zM10.2 14.4V9.4l5.4 2.5-5.4 2.5z" fill="white"/></svg>
-        <div><h3>Views YouTube</h3><div class="sub">YOUTUBE • VIEWS</div></div>
-      </div>
+      <div class="card-header"><svg class="card-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#FF0000"/><path d="M19.8 7.8s-.2-1.4-.8-2c-.76-.8-1.61-.8-2-.85C14.6 4.8 12 4.8 12 4.8s-2.6 0-5 .15c-.39.05-1.24.05-2 .85-.6.6-.8 2-.8 2S4 9.4 4 11v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.76.8 1.76.77 2.2.85C8.8 18.7 12 18.7 12 18.7s2.6 0 5-.17c.39-.05 1.24-.05 2-.85.6-.6.8-2 .8-2s.2-1.6.2-3.2V11c0-1.6-.2-3.2-.2-3.2zM10.2 14.4V9.4l5.4 2.5-5.4 2.5z" fill="white"/></svg><div><h3>Views YouTube</h3><div class="sub">YOUTUBE • VIEWS</div></div></div>
       <table><thead><tr><th>Jumlah</th><th style="text-align:right">Harga / Order</th></tr></thead><tbody id="tb-views-yt"></tbody></table>
     </div>
 
@@ -450,166 +193,48 @@ Ini dia kode HTML lengkapnya, silakan salin semua kode di bawah ini:
   <div class="cta-section">
     <h3>SOLUSI SUNTIK AMAN & <span>TERCEPAT</span> ADA DI SINI!</h3>
     <p>GAS KEN LANGSUNG AJA ORDER — Admin siap melayani 24 jam!</p>
-    <a class="cta-wa" href="https://wa.me/6287780575005?text=Halo+Admin+Poker+Store!+Saya+mau+order+jasa+suntik+sosmed." target="_blank">
-      💬 CHAT ADMIN SEKARANG
-    </a>
+    <a class="cta-wa" href="https://wa.me/6287780575005?text=Halo+Admin+Poker+Store!+Saya+mau+order+jasa+suntik+sosmed." target="_blank">💬 CHAT ADMIN SEKARANG</a>
   </div>
 
 </div>
 
-<footer>
-  &copy; 2024 <span>POKER STORE</span> — Region Jawa Barat | Hati-Hati Clone
-</footer>
+<footer>&copy; 2024 <span>POKER STORE</span> — Region Jawa Barat | Hati-Hati Clone</footer>
+
+<img src="logo-poker-store.png" alt="Poker Store" style="position:fixed;top:10px;left:10px;width:90px;height:90px;object-fit:contain;z-index:9999;filter:drop-shadow(0 0 10px rgba(227,30,36,0.7));pointer-events:none;">
 
 <script>
 const WA_NUMBER = '6287780575005';
-
 const data = {
-  'follower-tiktok': [
-    ['100 Follower','4K'],['200 Follower','6K'],['300 Follower','7K'],['400 Follower','8K'],
-    ['500 Follower','10K'],['600 Follower','11K'],['700 Follower','12K'],['800 Follower','13K'],
-    ['900 Follower','14K'],['1000 Follower','16K'],['1100 Follower','17,5K'],['1200 Follower','19K'],
-    ['1300 Follower','20,5K'],['1400 Follower','22K'],['1500 Follower','23,5K'],['1600 Follower','25K'],
-    ['1700 Follower','26,5K'],['1800 Follower','28K'],['1900 Follower','29,5K'],['2000 Follower','31K']
-  ],
-  'likes-tiktok': [
-    ['1000 Likes','4K'],['2000 Likes','6K'],['3000 Likes','8K'],['4000 Likes','10K'],
-    ['5000 Likes','12K'],['6000 Likes','14K'],['7000 Likes','16K'],['8000 Likes','18K'],
-    ['9000 Likes','20K'],['10000 Likes','22K']
-  ],
-  'views-tiktok': [
-    ['4000 Views','2K'],['8000 Views','3K'],['12000 Views','4K'],['16000 Views','5K'],
-    ['20000 Views','6K'],['24000 Views','7K'],['28000 Views','8K'],['32000 Views','9K'],
-    ['36000 Views','10K'],['40000 Views','11K']
-  ],
-  'komentar-tiktok': [
-    ['40 Komentar','2K'],['80 Komentar','3K'],['120 Komentar','4K'],['160 Komentar','5K'],
-    ['200 Komentar','6K'],['240 Komentar','7K'],['280 Komentar','8K'],['320 Komentar','9K'],
-    ['360 Komentar','10K'],['400 Komentar','11K']
-  ],
-  'member-wa': [
-    ['50 Pengikut','3K'],['100 Pengikut','6K'],['150 Pengikut','9K'],['200 Pengikut','12K'],
-    ['250 Pengikut','15K'],['300 Pengikut','17K'],['350 Pengikut','19K'],['400 Pengikut','21K'],
-    ['450 Pengikut','22K'],['500 Pengikut','23K'],['550 Pengikut','24,5K'],['600 Pengikut','26K'],
-    ['650 Pengikut','27,5K'],['700 Pengikut','29K'],['750 Pengikut','30K'],['800 Pengikut','31K'],
-    ['850 Pengikut','32K'],['900 Pengikut','33K'],['950 Pengikut','34K'],['1000 Pengikut','35K']
-  ],
-  'follower-ig': [
-    ['100 Follower','3K'],['200 Follower','5K'],['300 Follower','7K'],['400 Follower','9K'],
-    ['500 Follower','11K'],['600 Follower','12K'],['700 Follower','13K'],['800 Follower','14K'],
-    ['900 Follower','15K'],['1000 Follower','16K'],['1100 Follower','17,5K'],['1200 Follower','19K'],
-    ['1300 Follower','20,5K'],['1400 Follower','22K'],['1500 Follower','23,5K'],['1600 Follower','25K'],
-    ['1700 Follower','26K'],['1800 Follower','27K'],['1900 Follower','28K'],['2000 Follower','29K']
-  ],
-  'likes-ig': [
-    ['500 Likes','4K'],['1000 Likes','7K'],['1500 Likes','10K'],['2000 Likes','13K'],
-    ['2500 Likes','15K'],['3000 Likes','17K'],['3500 Likes','19K'],['4000 Likes','21K'],
-    ['4500 Likes','22K'],['5000 Likes','23K']
-  ],
-  'views-ig': [
-    ['4000 Views','3K'],['8000 Views','4K'],['12000 Views','5K'],['16000 Views','6K'],
-    ['20000 Views','7K'],['24000 Views','8K'],['28000 Views','9K'],['32000 Views','10K'],
-    ['36000 Views','11K'],['40000 Views','12K']
-  ],
-  'komentar-ig': [
-    ['40 Komentar','2K'],['80 Komentar','3K'],['120 Komentar','4K'],['160 Komentar','5K'],
-    ['200 Komentar','6K'],['240 Komentar','7K'],['280 Komentar','8K'],['320 Komentar','9K'],
-    ['360 Komentar','10K'],['400 Komentar','11K']
-  ],
-  'member-tg': [
-    ['100 Pengikut','1K'],['200 Pengikut','2K'],['300 Pengikut','3K'],['400 Pengikut','4K'],
-    ['500 Pengikut','5K'],['600 Pengikut','6K'],['700 Pengikut','7K'],['800 Pengikut','8K'],
-    ['900 Pengikut','9K'],['1000 Pengikut','10K']
-  ],
-  'likes-yt': [
-    ['500 Likes','4K'],['1000 Likes','6K'],['1500 Likes','8K'],['2000 Likes','10K'],
-    ['2500 Likes','12K'],['3000 Likes','14K'],['3500 Likes','16K'],['4000 Likes','18K'],
-    ['4500 Likes','19K'],['5000 Likes','20K']
-  ],
-  'views-yt': [
-    ['100 Views','3K'],['200 Views','6K'],['300 Views','9K'],['400 Views','11K'],
-    ['500 Views','13K'],['600 Views','15K'],['700 Views','16K'],['800 Views','18K'],
-    ['900 Views','20K'],['1000 Views','22K']
-  ]
+  'follower-tiktok':[['100 Follower','4K'],['200 Follower','6K'],['300 Follower','7K'],['400 Follower','8K'],['500 Follower','10K'],['600 Follower','11K'],['700 Follower','12K'],['800 Follower','13K'],['900 Follower','14K'],['1000 Follower','16K'],['1100 Follower','17,5K'],['1200 Follower','19K'],['1300 Follower','20,5K'],['1400 Follower','22K'],['1500 Follower','23,5K'],['1600 Follower','25K'],['1700 Follower','26,5K'],['1800 Follower','28K'],['1900 Follower','29,5K'],['2000 Follower','31K']],
+  'likes-tiktok':[['1000 Likes','4K'],['2000 Likes','6K'],['3000 Likes','8K'],['4000 Likes','10K'],['5000 Likes','12K'],['6000 Likes','14K'],['7000 Likes','16K'],['8000 Likes','18K'],['9000 Likes','20K'],['10000 Likes','22K']],
+  'views-tiktok':[['4000 Views','2K'],['8000 Views','3K'],['12000 Views','4K'],['16000 Views','5K'],['20000 Views','6K'],['24000 Views','7K'],['28000 Views','8K'],['32000 Views','9K'],['36000 Views','10K'],['40000 Views','11K']],
+  'komentar-tiktok':[['40 Komentar','2K'],['80 Komentar','3K'],['120 Komentar','4K'],['160 Komentar','5K'],['200 Komentar','6K'],['240 Komentar','7K'],['280 Komentar','8K'],['320 Komentar','9K'],['360 Komentar','10K'],['400 Komentar','11K']],
+  'member-wa':[['50 Pengikut','3K'],['100 Pengikut','6K'],['150 Pengikut','9K'],['200 Pengikut','12K'],['250 Pengikut','15K'],['300 Pengikut','17K'],['350 Pengikut','19K'],['400 Pengikut','21K'],['450 Pengikut','22K'],['500 Pengikut','23K'],['550 Pengikut','24,5K'],['600 Pengikut','26K'],['650 Pengikut','27,5K'],['700 Pengikut','29K'],['750 Pengikut','30K'],['800 Pengikut','31K'],['850 Pengikut','32K'],['900 Pengikut','33K'],['950 Pengikut','34K'],['1000 Pengikut','35K']],
+  'follower-ig':[['100 Follower','3K'],['200 Follower','5K'],['300 Follower','7K'],['400 Follower','9K'],['500 Follower','11K'],['600 Follower','12K'],['700 Follower','13K'],['800 Follower','14K'],['900 Follower','15K'],['1000 Follower','16K'],['1100 Follower','17,5K'],['1200 Follower','19K'],['1300 Follower','20,5K'],['1400 Follower','22K'],['1500 Follower','23,5K'],['1600 Follower','25K'],['1700 Follower','26K'],['1800 Follower','27K'],['1900 Follower','28K'],['2000 Follower','29K']],
+  'likes-ig':[['500 Likes','4K'],['1000 Likes','7K'],['1500 Likes','10K'],['2000 Likes','13K'],['2500 Likes','15K'],['3000 Likes','17K'],['3500 Likes','19K'],['4000 Likes','21K'],['4500 Likes','22K'],['5000 Likes','23K']],
+  'views-ig':[['4000 Views','3K'],['8000 Views','4K'],['12000 Views','5K'],['16000 Views','6K'],['20000 Views','7K'],['24000 Views','8K'],['28000 Views','9K'],['32000 Views','10K'],['36000 Views','11K'],['40000 Views','12K']],
+  'komentar-ig':[['40 Komentar','2K'],['80 Komentar','3K'],['120 Komentar','4K'],['160 Komentar','5K'],['200 Komentar','6K'],['240 Komentar','7K'],['280 Komentar','8K'],['320 Komentar','9K'],['360 Komentar','10K'],['400 Komentar','11K']],
+  'member-tg':[['100 Pengikut','1K'],['200 Pengikut','2K'],['300 Pengikut','3K'],['400 Pengikut','4K'],['500 Pengikut','5K'],['600 Pengikut','6K'],['700 Pengikut','7K'],['800 Pengikut','8K'],['900 Pengikut','9K'],['1000 Pengikut','10K']],
+  'likes-yt':[['500 Likes','4K'],['1000 Likes','6K'],['1500 Likes','8K'],['2000 Likes','10K'],['2500 Likes','12K'],['3000 Likes','14K'],['3500 Likes','16K'],['4000 Likes','18K'],['4500 Likes','19K'],['5000 Likes','20K']],
+  'views-yt':[['100 Views','3K'],['200 Views','6K'],['300 Views','9K'],['400 Views','11K'],['500 Views','13K'],['600 Views','15K'],['700 Views','16K'],['800 Views','18K'],['900 Views','20K'],['1000 Views','22K']]
 };
-
-const serviceLabels = {
-  'follower-tiktok': 'Follower TikTok',
-  'likes-tiktok': 'Likes TikTok',
-  'views-tiktok': 'Views TikTok',
-  'komentar-tiktok': 'Komentar TikTok',
-  'member-wa': 'Pengikut WhatsApp Saluran',
-  'follower-ig': 'Follower Instagram',
-  'likes-ig': 'Likes Instagram',
-  'views-ig': 'Views Instagram',
-  'komentar-ig': 'Komentar Instagram',
-  'member-tg': 'Pengikut Telegram',
-  'likes-yt': 'Likes YouTube',
-  'views-yt': 'Views YouTube'
-};
-
-Object.entries(data).forEach(([key, rows]) => {
-  const tbody = document.getElementById('tb-' + key);
-  if (!tbody) return;
-  rows.forEach(([jumlah, harga]) => {
-    const tr = document.createElement('tr');
-    const msg = encodeURIComponent(
-      `Halo Admin Poker Store! 👋\nSaya mau order *${serviceLabels[key]}*\nJumlah: *${jumlah}*\nHarga: *Rp ${harga}*\nMohon info lebih lanjut ya 🙏`
-    );
-    tr.innerHTML = `
-      <td>${jumlah}</td>
-      <td><a class="order-btn" href="https://wa.me/${WA_NUMBER}?text=${msg}" target="_blank">💬 ORDER — Rp ${harga}</a></td>
-    `;
+const serviceLabels = {'follower-tiktok':'Follower TikTok','likes-tiktok':'Likes TikTok','views-tiktok':'Views TikTok','komentar-tiktok':'Komentar TikTok','member-wa':'Pengikut WhatsApp Saluran','follower-ig':'Follower Instagram','likes-ig':'Likes Instagram','views-ig':'Views Instagram','komentar-ig':'Komentar Instagram','member-tg':'Pengikut Telegram','likes-yt':'Likes YouTube','views-yt':'Views YouTube'};
+Object.entries(data).forEach(([key,rows])=>{
+  const tbody=document.getElementById('tb-'+key);
+  if(!tbody)return;
+  rows.forEach(([jumlah,harga])=>{
+    const tr=document.createElement('tr');
+    const msg=encodeURIComponent(`Halo Admin Poker Store! 👋\nSaya mau order *${serviceLabels[key]}*\nJumlah: *${jumlah}*\nHarga: *Rp ${harga}*\nMohon info lebih lanjut ya 🙏`);
+    tr.innerHTML=`<td>${jumlah}</td><td><a class="order-btn" href="https://wa.me/${WA_NUMBER}?text=${msg}" target="_blank">💬 ORDER — Rp ${harga}</a></td>`;
     tbody.appendChild(tr);
   });
 });
-
-let activeSosmed = 'all';
-let activeKat = 'all';
-
-function filterSosmed(val) {
-  activeSosmed = val;
-  document.querySelectorAll('#sosmedTabs .tab-btn').forEach(b => b.classList.remove('active'));
-  event.target.closest('.tab-btn').classList.add('active');
-  applyFilter();
-}
-
-function filterKat(val) {
-  activeKat = val;
-  document.querySelectorAll('#katTabs .tab-btn').forEach(b => b.classList.remove('active'));
-  event.target.closest('.tab-btn').classList.add('active');
-  applyFilter();
-}
-
-function applyFilter() {
-  document.querySelectorAll('.price-card').forEach(card => {
-    const sm = card.dataset.sosmed;
-    const kt = card.dataset.kat;
-    const showSm = activeSosmed === 'all' || sm === activeSosmed;
-    const showKt = activeKat === 'all' || kt === activeKat;
-    card.style.display = (showSm && showKt) ? 'block' : 'none';
-  });
-}
-
-function toggleDark() {
-  const body = document.body;
-  const btn = document.getElementById('darkToggle');
-  body.classList.toggle('dark');
-  const isDark = body.classList.contains('dark');
-  btn.textContent = isDark ? '☀️' : '🌙';
-  localStorage.setItem('pokerDarkMode', isDark ? '1' : '0');
-}
-
-(function() {
-  if (localStorage.getItem('pokerDarkMode') === '1') {
-    document.body.classList.add('dark');
-    const btn = document.getElementById('darkToggle');
-    if (btn) btn.textContent = '☀️';
-  }
-})();
+let activeSosmed='all',activeKat='all';
+function filterSosmed(val){activeSosmed=val;document.querySelectorAll('#sosmedTabs .tab-btn').forEach(b=>b.classList.remove('active'));event.target.closest('.tab-btn').classList.add('active');applyFilter();}
+function filterKat(val){activeKat=val;document.querySelectorAll('#katTabs .tab-btn').forEach(b=>b.classList.remove('active'));event.target.closest('.tab-btn').classList.add('active');applyFilter();}
+function applyFilter(){document.querySelectorAll('.price-card').forEach(card=>{const sm=card.dataset.sosmed,kt=card.dataset.kat,showSm=activeSosmed==='all'||sm===activeSosmed,showKt=activeKat==='all'||kt===activeKat;card.style.display=(showSm&&showKt)?'block':'none';});}
+function toggleDark(){const body=document.body,btn=document.getElementById('darkToggle');body.classList.toggle('dark');const isDark=body.classList.contains('dark');btn.textContent=isDark?'☀️':'🌙';localStorage.setItem('pokerDarkMode',isDark?'1':'0');}
+(function(){if(localStorage.getItem('pokerDarkMode')==='1'){document.body.classList.add('dark');const btn=document.getElementById('darkToggle');if(btn)btn.textContent='☀️';}})();
 </script>
-
-<!-- Ganti src berikut dengan path logo kamu -->
-<img src="logo-poker-store.png" alt="Poker Store" style="position:fixed;top:10px;left:10px;width:90px;height:90px;object-fit:contain;z-index:9999;filter:drop-shadow(0 0 10px rgba(227,30,36,0.7));pointer-events:none;">
 </body>
 </html>
