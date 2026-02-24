@@ -7,14 +7,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0a0a;
-    --surface: #111111;
-    --card: #161616;
-    --border: rgba(255,255,255,0.12);
-    --red: #ff1e1e;
-    --red-glow: #ff1e1e88;
-    --white: #f0f0f0;
-    --muted: #888;
+    --bg: #050e08;
+    --surface: #0a1a0f;
+    --card: #0d2015;
+    --border: rgba(212,175,55,0.25);
+    --red: #c9a227;
+    --red-glow: #c9a22788;
+    --white: #f5f0e0;
+    --muted: #8a9e8a;
+    --green: #1a6b35;
+    --gold: #c9a227;
+    --gold-glow: #c9a22766;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,7 +34,7 @@
     content: '';
     position: fixed;
     inset: 0;
-    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+    background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.02) 3px, rgba(0,0,0,0.02) 6px);
     pointer-events: none;
     z-index: 9999;
   }
@@ -41,7 +44,7 @@
     position: relative;
     text-align: center;
     padding: 50px 20px 36px;
-    background: radial-gradient(ellipse at top, #2a0000 0%, transparent 70%);
+    background: radial-gradient(ellipse at top, #0a3520 0%, #051208 60%, transparent 100%);
     border-bottom: 1px solid var(--border);
   }
 
@@ -124,7 +127,7 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--red), transparent);
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
   }
 
   .section-title {
@@ -437,17 +440,273 @@
     .banner-btn { width: 28px; height: 28px; font-size: 14px; }
   }
 
+
+  /* ── RAMADAN THEME ── */
+  .ramadan-banner {
+    background: linear-gradient(135deg, #0a3520, #1a6b35, #0a3520);
+    border-bottom: 2px solid var(--gold);
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+  }
+  .ramadan-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(201,162,39,0.15) 50%, transparent 100%);
+    animation: ramadanShine 3s ease-in-out infinite;
+  }
+  @keyframes ramadanShine {
+    0%,100% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+  }
+  .ramadan-banner span { position: relative; z-index: 1; }
+
+  /* Bintang/dekorasi Ramadan di header */
+  .ramadan-deco {
+    font-size: 22px;
+    letter-spacing: 8px;
+    margin-bottom: 8px;
+    animation: starPulse 2s ease-in-out infinite;
+    display: block;
+  }
+  @keyframes starPulse {
+    0%,100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  /* Bulan sabit di header */
+  .crescent {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-size: 32px;
+    animation: crescentGlow 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px rgba(201,162,39,0.8));
+  }
+  @keyframes crescentGlow {
+    0%,100% { filter: drop-shadow(0 0 6px rgba(201,162,39,0.6)); }
+    50% { filter: drop-shadow(0 0 16px rgba(201,162,39,1)); }
+  }
+
+  /* Floating lantern particles */
+  .lantern {
+    position: fixed;
+    font-size: 20px;
+    animation: floatUp linear infinite;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.6;
+  }
+  @keyframes floatUp {
+    0%   { transform: translateY(100vh) rotate(-10deg); opacity: 0; }
+    10%  { opacity: 0.6; }
+    90%  { opacity: 0.4; }
+    100% { transform: translateY(-10vh) rotate(10deg); opacity: 0; }
+  }
+
+  /* Update button hover ke emas */
+  .btn-option:hover,
+  .btn-option.active {
+    background: var(--gold) !important;
+    border-color: var(--gold) !important;
+    color: #0a0a0a !important;
+    box-shadow: 0 0 20px var(--gold-glow) !important;
+  }
+  .btn-option.cat-active {
+    background: #0d2a12 !important;
+    border-color: var(--gold) !important;
+    color: var(--gold) !important;
+    box-shadow: 0 0 12px var(--gold-glow) !important;
+  }
+  .wa-float {
+    background: #1a6b35 !important;
+    box-shadow: 0 4px 30px rgba(26,107,53,0.6) !important;
+  }
+  .price-item:hover {
+    border-color: rgba(201,162,39,0.5) !important;
+    background: #0a1e0f !important;
+    box-shadow: 0 4px 20px rgba(201,162,39,0.15) !important;
+  }
+  .price-header {
+    color: var(--gold) !important;
+    text-shadow: 0 0 15px var(--gold-glow) !important;
+  }
+
+  /* Chibi bubble Ramadan */
+  #chibi-bubble {
+    background: linear-gradient(135deg, #1a6b35, #0d4020) !important;
+    box-shadow: 0 4px 20px rgba(26,107,53,0.55) !important;
+  }
+
+
+  /* ── LAMPU GANTUNG ── */
+  .lights-container {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 120px;
+    pointer-events: none;
+    z-index: 9998;
+    overflow: visible;
+  }
+  .lights-string {
+    position: absolute;
+    top: 0; left: -2%; right: -2%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #8B6914 5%, #c9a227 50%, #8B6914 95%, transparent 100%);
+  }
+  .lights-string::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(90deg, transparent 0px, transparent 48px, rgba(201,162,39,0.3) 48px, rgba(201,162,39,0.3) 50px);
+  }
+  .lamp {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-origin: top center;
+  }
+  .lamp-string {
+    width: 1.5px;
+    background: linear-gradient(to bottom, #8B6914, #c9a227);
+  }
+  .lamp-body {
+    border-radius: 50% 50% 60% 60%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 12px currentColor, 0 0 24px currentColor, inset 0 0 8px rgba(255,255,255,0.3);
+  }
+  .lamp-body::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    width: 40%;
+    height: 6px;
+    background: inherit;
+    border-radius: 50%;
+    filter: blur(2px);
+  }
+  .lamp-cap {
+    width: 110%;
+    height: 6px;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 1;
+  }
+  .lamp-tassel {
+    width: 2px;
+    border-radius: 1px;
+    margin-top: 1px;
+  }
+  @keyframes swingLamp {
+    0%,100% { transform: rotate(-8deg); }
+    50%      { transform: rotate(8deg); }
+  }
+  @keyframes lampGlow {
+    0%,100% { filter: brightness(1); }
+    50%      { filter: brightness(1.4); }
+  }
+
+  /* ── KETUPAT MELAYANG ── */
+  .ketupat-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+  }
+  .ketupat {
+    position: absolute;
+    display: inline-block;
+    animation: floatKetupat linear infinite;
+    opacity: 0;
+  }
+  @keyframes floatKetupat {
+    0%   { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+    5%   { opacity: 0.85; }
+    95%  { opacity: 0.6; }
+    100% { transform: translateY(-15vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* ── KUPON MELAYANG ── */
+  .kupon {
+    position: absolute;
+    animation: floatKupon linear infinite;
+    opacity: 0;
+    pointer-events: none;
+  }
+  @keyframes floatKupon {
+    0%   { transform: translateY(110vh) rotate(-15deg); opacity: 0; }
+    8%   { opacity: 0.9; }
+    92%  { opacity: 0.7; }
+    100% { transform: translateY(-15vh) rotate(25deg); opacity: 0; }
+  }
+  .kupon-inner {
+    background: linear-gradient(135deg, #c9a227, #f0d060, #c9a227);
+    color: #1a0a00;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1.5px dashed #8B4513;
+    text-align: center;
+    line-height: 1.3;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(201,162,39,0.5);
+    position: relative;
+  }
+  .kupon-inner::before, .kupon-inner::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px; height: 6px;
+    background: var(--bg);
+    border-radius: 50%;
+    border: 1px dashed #8B4513;
+  }
+  .kupon-inner::before { left: -4px; }
+  .kupon-inner::after  { right: -4px; }
+
 </style>
 </head>
 <body>
+
+<!-- LAMPU GANTUNG RAMADAN -->
+<div class="lights-container" id="lightsContainer">
+  <div class="lights-string"></div>
+</div>
+
+<!-- KETUPAT & KUPON MELAYANG -->
+<div class="ketupat-container" id="ketupatContainer"></div>
+
 
 <header>
   <div class="logo-badge">
     <img src="data:image/jpeg;base64,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" alt="Poker Store Logo">
   </div>
+  <span class="crescent">🌙</span>
+  <span class="ramadan-deco">✨ 🕌 ✨</span>
   <div class="title-main">SUNTIK ALL<br>SOSMED</div>
   <div class="title-sub">POKER STORE</div>
 </header>
+
+<!-- RAMADAN BANNER -->
+<div class="ramadan-banner">
+  <span>🌙 RAMADAN KAREEM 1446 H — PROMO SPESIAL RAMADAN ⭐ POKER STORE 🌙</span>
+</div>
+
 
 <!-- BANNER SLIDER -->
 <div class="banner-slider" id="bannerSlider">
@@ -468,7 +727,7 @@
 </div>
 
 
-<div class="simple-tagline">Klik harga yang kamu inginkan → otomatis diarahkan ke WhatsApp Admin</div>
+<div class="simple-tagline">🌙 Ramadan Special! Klik harga → langsung order via WhatsApp ⭐</div>
 
 
 <main>
@@ -501,7 +760,7 @@
   💬 CHAT ADMIN
 </a>
 
-<footer>© 2024 POKER STORE · All Sosmed Boost Service</footer>
+<footer>🌙 © 2025 POKER STORE · Ramadan Kareem 1446 H · All Sosmed Boost Service ⭐</footer>
 
 <script>
 const WA = '6287780575005';
@@ -732,6 +991,137 @@ if (_slider) {
   }, {passive:true});
 }
 bannerResetAuto();
+
+
+// ── RAMADAN FLOATING LANTERNS ──
+(function() {
+  var emojis = ['🏮','⭐','✨','🌟','🌙'];
+  function spawnLantern() {
+    var el = document.createElement('div');
+    el.className = 'lantern';
+    el.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left = Math.random()*100 + 'vw';
+    el.style.fontSize = (14 + Math.random()*14) + 'px';
+    var dur = 8 + Math.random()*10;
+    el.style.animationDuration = dur + 's';
+    el.style.animationDelay = '0s';
+    document.body.appendChild(el);
+    setTimeout(function(){ el.remove(); }, dur*1000);
+  }
+  // Spawn beberapa lantern
+  for(var i=0;i<5;i++) {
+    setTimeout(spawnLantern, i*1200);
+  }
+  setInterval(spawnLantern, 2500);
+})();
+
+
+// ── LAMPU GANTUNG ──
+(function() {
+  var container = document.getElementById('lightsContainer');
+  if (!container) return;
+
+  var colors = [
+    { body: '#ff4444', glow: '#ff0000', cap: '#cc0000', tassel: '#880000' },
+    { body: '#44bb44', glow: '#00cc00', cap: '#228822', tassel: '#115511' },
+    { body: '#c9a227', glow: '#ffcc00', cap: '#8B6914', tassel: '#5a4008' },
+    { body: '#4488ff', glow: '#0066ff', cap: '#224488', tassel: '#112244' },
+    { body: '#cc44cc', glow: '#aa00aa', cap: '#882288', tassel: '#441144' },
+    { body: '#ff8844', glow: '#ff6600', cap: '#cc5500', tassel: '#883300' },
+  ];
+
+  var totalLamps = 12;
+  for (var i = 0; i < totalLamps; i++) {
+    var pct = (i / (totalLamps - 1)) * 100;
+    var c = colors[i % colors.length];
+    var stringLen = 30 + Math.sin(i * 0.8) * 15; // Vary string length for natural look
+    var bodyW = 18 + (i % 3) * 4;
+    var bodyH = 24 + (i % 3) * 5;
+    var delay = i * 0.3;
+    var swingDur = 2.5 + (i % 4) * 0.5;
+
+    var lamp = document.createElement('div');
+    lamp.className = 'lamp';
+    lamp.style.left = pct + '%';
+    lamp.style.animationDelay = delay + 's';
+    lamp.innerHTML =
+      '<div class="lamp-string" style="height:' + stringLen + 'px;"></div>' +
+      '<div style="animation: swingLamp ' + swingDur + 's ease-in-out infinite; animation-delay:' + delay + 's; transform-origin:top center;">' +
+        '<div class="lamp-cap" style="width:' + (bodyW+6) + 'px; background:' + c.cap + ';"></div>' +
+        '<div class="lamp-body" style="width:' + bodyW + 'px; height:' + bodyH + 'px; background:radial-gradient(circle at 35% 35%, ' + c.body + 'dd, ' + c.body + '); color:' + c.glow + '; animation: lampGlow ' + (swingDur*0.7) + 's ease-in-out infinite; animation-delay:' + delay + 's;"></div>' +
+        '<div class="lamp-tassel" style="height:' + (8+(i%3)*3) + 'px; background:' + c.tassel + ';"></div>' +
+      '</div>';
+    container.appendChild(lamp);
+  }
+})();
+
+// ── KETUPAT MELAYANG ──
+(function() {
+  var container = document.getElementById('ketupatContainer');
+  if (!container) return;
+
+  var ketupatSVG = function(color1, color2, size) {
+    return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">' +
+      '<polygon points="30,2 58,30 30,58 2,30" fill="' + color1 + '" stroke="' + color2 + '" stroke-width="2"/>' +
+      '<polygon points="30,10 50,30 30,50 10,30" fill="' + color2 + '" opacity="0.4"/>' +
+      '<line x1="30" y1="2" x2="30" y2="58" stroke="' + color2 + '" stroke-width="1" opacity="0.5"/>' +
+      '<line x1="2" y1="30" x2="58" y2="30" stroke="' + color2 + '" stroke-width="1" opacity="0.5"/>' +
+      '<line x1="10" y1="10" x2="50" y2="50" stroke="' + color2 + '" stroke-width="0.8" opacity="0.3"/>' +
+      '<line x1="50" y1="10" x2="10" y2="50" stroke="' + color2 + '" stroke-width="0.8" opacity="0.3"/>' +
+    '</svg>';
+  };
+
+  var ketupatColors = [
+    ['#1a6b35','#c9a227'], ['#c9a227','#1a6b35'],
+    ['#2d5a1b','#f0d060'], ['#8B4513','#c9a227'],
+    ['#1a3a6b','#c9a227'],
+  ];
+
+  function spawnKetupat() {
+    var el = document.createElement('div');
+    el.className = 'ketupat';
+    var c = ketupatColors[Math.floor(Math.random() * ketupatColors.length)];
+    var size = 22 + Math.random() * 22;
+    el.style.left = (Math.random() * 95) + 'vw';
+    var dur = 10 + Math.random() * 12;
+    el.style.animationDuration = dur + 's';
+    el.style.animationDelay = '0s';
+    el.style.fontSize = size + 'px';
+    el.innerHTML = ketupatSVG(c[0], c[1], size);
+    container.appendChild(el);
+    setTimeout(function() { el.remove(); }, dur * 1000);
+  }
+
+  for (var i = 0; i < 6; i++) setTimeout(spawnKetupat, i * 800);
+  setInterval(spawnKetupat, 2000);
+})();
+
+// ── KUPON MELAYANG ──
+(function() {
+  var container = document.getElementById('ketupatContainer');
+  if (!container) return;
+
+  var kuponTexts = [
+    ['%', 'DISKON'], ['🎁', 'PROMO'], ['⭐', 'BONUS'],
+    ['🌙', 'RAMADAN'], ['%', 'HEMAT'], ['✨', 'SPESIAL']
+  ];
+
+  function spawnKupon() {
+    var el = document.createElement('div');
+    el.className = 'kupon';
+    var k = kuponTexts[Math.floor(Math.random() * kuponTexts.length)];
+    var dur = 9 + Math.random() * 10;
+    el.style.left = (Math.random() * 90) + 'vw';
+    el.style.animationDuration = dur + 's';
+    el.style.animationDelay = '0s';
+    el.innerHTML = '<div class="kupon-inner">' + k[0] + '<br>' + k[1] + '</div>';
+    container.appendChild(el);
+    setTimeout(function() { el.remove(); }, dur * 1000);
+  }
+
+  for (var i = 0; i < 4; i++) setTimeout(spawnKupon, i * 1500 + 500);
+  setInterval(spawnKupon, 2800);
+})();
 
 </script>
 
