@@ -201,9 +201,32 @@
     /* ════════════════════════════════════
        RESPONSIVE
     ════════════════════════════════════ */
-    @media(max-width:1024px){.stats-grid{grid-template-columns:repeat(2,1fr)}.feat-grid{grid-template-columns:repeat(2,1fr)}}
+    /* ════════════════════════════════════
+       RATING & TESTIMONIALS
+    ════════════════════════════════════ */
+    /* Overall rating box */
+    .rating-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:44px}
+    .rating-big{font-family:var(--fh);font-size:72px;font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .stars-row{display:flex;gap:4px;font-size:28px;color:var(--c)}
+    .rating-count{color:var(--muted);font-size:13px}
+    /* Testimonial grid */
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .testi-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:14px;transition:transform .25s,box-shadow .25s}
+    .testi-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,229,255,.1)}
+    .testi-head{display:flex;align-items:center;gap:12px}
+    .testi-avatar{width:44px;height:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff;flex-shrink:0;font-family:var(--fh)}
+    .testi-info strong{display:block;font-weight:700;font-size:14px}
+    .testi-info span{color:var(--muted);font-size:12px}
+    .testi-stars{display:flex;gap:3px;font-size:14px;color:var(--c)}
+    .testi-platform{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);margin-top:2px}
+    .testi-text{color:var(--muted);font-size:14px;line-height:1.65;font-style:italic}
+    .testi-text::before{content:'"';font-size:28px;color:var(--a);line-height:0;vertical-align:-10px;margin-right:2px}
+    /* Marquee for mobile-friendly scroll */
+    @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    @media(max-width:1024px){.stats-grid{grid-template-columns:repeat(2,1fr)}.feat-grid{grid-template-columns:repeat(2,1fr)}.testi-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-vis{display:none}.order-wrap{grid-template-columns:1fr}}
-    @media(max-width:640px){section{padding:56px 0}.nav-links,header>.btn{display:none}.hamburger{display:flex}.cta-box{padding:32px 18px}.form-card{padding:22px 16px}.footer-in{flex-direction:column;text-align:center}}
+    @media(max-width:640px){section{padding:56px 0}.nav-links,header>.btn{display:none}.hamburger{display:flex}.cta-box{padding:32px 18px}.form-card{padding:22px 16px}.footer-in{flex-direction:column;text-align:center}.testi-grid{grid-template-columns:1fr}}
     @media(max-width:420px){.feat-grid{grid-template-columns:1fr}}
   </style>
 </head>
@@ -235,6 +258,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#order">Order</a></li>
       <li><a href="#features">Fitur</a></li>
+      <li><a href="#testimoni">Testimoni</a></li>
       <li><a href="#contact">Kontak</a></li>
     </ul>
     <div class="hamburger" onclick="toggleMob()"><span></span><span></span><span></span></div>
@@ -244,6 +268,7 @@
     <a href="#services" onclick="toggleMob()">🛎 Services</a>
     <a href="#order"    onclick="toggleMob()">📦 Order</a>
     <a href="#features" onclick="toggleMob()">⭐ Fitur</a>
+    <a href="#testimoni" onclick="toggleMob()">💬 Testimoni</a>
     <a href="#contact"  onclick="toggleMob()">📞 Kontak</a>
     <a href="#order"    onclick="toggleMob()" style="margin-top:6px;background:var(--grad);border-radius:10px;color:#fff;font-weight:700;text-align:center;">⚡ Order Now</a>
   </div>
@@ -406,6 +431,139 @@
       <div class="feat-card reveal"><div class="feat-ico">💰</div><div class="feat-title">Harga Murah</div><p class="feat-desc">Harga terjangkau dan kompetitif dengan kualitas yang tidak perlu diragukan.</p></div>
       <div class="feat-card reveal"><div class="feat-ico">💎</div><div class="feat-title">Kualitas Premium</div><p class="feat-desc">Followers dan likes berkualitas tinggi dari akun aktif untuk hasil terbaik.</p></div>
       <div class="feat-card reveal"><div class="feat-ico">🕐</div><div class="feat-title">Support 24/7</div><p class="feat-desc">Tim kami siap melayani pertanyaan dan kendala kamu kapan saja kapan pun.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     TESTIMONIALS SECTION
+════════════════════════════════════ -->
+<section id="testimoni">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="s-label">Testimoni Pelanggan</div>
+      <h2 class="s-title reveal">Apa Kata <span class="grad-text">Customer Kami?</span></h2>
+      <p class="s-sub reveal" style="max-width:480px;margin:0 auto 32px">Ribuan pelanggan sudah mempercayakan pertumbuhan sosial media mereka kepada Poker Store.</p>
+
+      <!-- Overall rating -->
+      <div class="rating-wrap reveal">
+        <div class="rating-big">4.9</div>
+        <div class="stars-row">★★★★★</div>
+        <div class="rating-count">Berdasarkan 2.340+ ulasan pelanggan</div>
+      </div>
+    </div>
+
+    <!-- Testimonial cards -->
+    <div class="testi-grid">
+
+      <div class="testi-card reveal">
+        <div class="testi-head">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#ee1d52,#ff4d7d)">R</div>
+          <div class="testi-info">
+            <strong>Rizky Pratama</strong>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-platform"><i class="fa-brands fa-tiktok" style="color:#ee1d52"></i> TikTok Followers</div>
+          </div>
+        </div>
+        <p class="testi-text">Beneran kenceng banget prosesnya! Order 1000 followers TikTok, kurang dari 1 jam udah masuk semua. Harga juga paling murah dibanding tempat lain. Recommended!</p>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-head">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#e1306c,#f77737)">S</div>
+          <div class="testi-info">
+            <strong>Siti Aulia</strong>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-platform"><i class="fa-brands fa-instagram" style="color:#e1306c"></i> Instagram Followers</div>
+          </div>
+        </div>
+        <p class="testi-text">Udah langganan dari 3 bulan lalu. Selalu puas sama hasilnya, followers yang dateng aktif banget dan nggak drop. Admin juga fast respon, top lah pokoknya!</p>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-head">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#25d366,#128c7e)">A</div>
+          <div class="testi-info">
+            <strong>Ahmad Fauzi</strong>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-platform"><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> WA Channel Pengikut</div>
+          </div>
+        </div>
+        <p class="testi-text">Saluran WhatsApp saya langsung rame setelah order 1000 pengikut di sini. Prosesnya cepat dan pengikutnya nyata. Harga juga worth it banget!</p>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-head">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">D</div>
+          <div class="testi-info">
+            <strong>Dewi Cahyani</strong>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-platform"><i class="fa-brands fa-tiktok" style="color:#ee1d52"></i> TikTok Views</div>
+          </div>
+        </div>
+        <p class="testi-text">Video TikTok saya FYP setelah beli 10K views di sini! Nggak nyangka bakal seefektif ini. Sekarang jadi rutin order setiap upload konten baru. Makasih Poker Store!</p>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-head">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">B</div>
+          <div class="testi-info">
+            <strong>Bagas Nugroho</strong>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-platform"><i class="fa-brands fa-instagram" style="color:#e1306c"></i> Instagram Likes</div>
+          </div>
+        </div>
+        <p class="testi-text">Likes Instagram langsung nambah dalam hitungan menit. Akun saya jadi keliatan lebih kredibel dan engagement naik drastis. Harga murah kualitas premium!</p>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-head">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#00e5ff,#0284c7)">F</div>
+          <div class="testi-info">
+            <strong>Fitri Handayani</strong>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-platform"><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> WA Reaction Emoji</div>
+          </div>
+        </div>
+        <p class="testi-text">Reaction channel WA saya langsung penuh setelah order di sini. Konten saya jadi terlihat lebih viral dan banyak yang tertarik join channel. Puas banget!</p>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-head">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#10b981,#059669)">H</div>
+          <div class="testi-info">
+            <strong>Hendra Wijaya</strong>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-platform"><i class="fa-brands fa-tiktok" style="color:#ee1d52"></i> TikTok Likes</div>
+          </div>
+        </div>
+        <p class="testi-text">Sudah order berkali-kali, nggak pernah kecewa. Proses cepat, aman, dan admin selalu siap bantu kalau ada kendala. Ini tempat terpercaya buat boost sosmed!</p>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-head">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)">N</div>
+          <div class="testi-info">
+            <strong>Nadia Putri</strong>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-platform"><i class="fa-brands fa-instagram" style="color:#e1306c"></i> Instagram Followers</div>
+          </div>
+        </div>
+        <p class="testi-text">Followers IG saya naik 3000 dalam 2 hari! Kualitasnya bagus banget, profil saya jadi keliatan lebih profesional. Harga terjangkau untuk hasil yang luar biasa!</p>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-head">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#f97316,#eab308)">Y</div>
+          <div class="testi-info">
+            <strong>Yusuf Hakim</strong>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-platform"><i class="fa-brands fa-tiktok" style="color:#ee1d52"></i> TikTok Followers</div>
+          </div>
+        </div>
+        <p class="testi-text">Baru pertama kali coba dan langsung ketagihan! Order 500 followers TikTok langsung proses. Nggak ada drama, langsung masuk. Harga paling murah se-Indonesia!</p>
+      </div>
+
     </div>
   </div>
 </section>
